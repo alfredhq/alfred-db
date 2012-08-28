@@ -65,6 +65,7 @@ def main():
 
     parser.add_argument('-c', '--config',
         type=str,
+        required=True,
         help='Path to the Alfred config',
     )
 
