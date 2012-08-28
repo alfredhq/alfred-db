@@ -23,8 +23,8 @@ def upgrade():
         sa.Column('name', sa.String(), nullable=False),
         sa.Column('email', sa.String(), nullable=False),
         sa.PrimaryKeyConstraint('id'),
-        sa.Index('ix_users_github_id', 'github_id', unique=True),
-        sa.Index('ix_users_login', 'login', unique=True),
+        sa.UniqueConstraint('github_id'),
+        sa.UniqueConstraint('login'),
     )
 
 
