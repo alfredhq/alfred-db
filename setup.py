@@ -10,7 +10,15 @@ setup(
     author='Alfred Developers',
     author_email='team@alfredhq.com',
     packages=find_packages(),
+    include_package_data=True,
     install_requires=[
+        'PyYAML',
         'SQLAlchemy',
+        'alembic',
     ],
+    entry_points={
+        'console_scripts': [
+            'alfred-db = alfred_db.__main__:main',
+        ],
+    },
 )

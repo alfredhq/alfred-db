@@ -1,0 +1,3 @@
+include alfred_db/migrations/alembic.ini
+include alfred_db/migrations/script.py.mako
+recursive-include alfred_db/migrations *.py
