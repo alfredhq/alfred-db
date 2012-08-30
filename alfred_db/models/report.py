@@ -7,7 +7,7 @@ from .base import Base
 class Report(Base):
 
     id = Column(Integer, primary_key=True)
-    error = Column(Text, nullable=False)
+    error = Column(Text)
     finished_on = Column(DateTime)
 
     commit_id = Column(
