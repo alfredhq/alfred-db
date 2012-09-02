@@ -23,8 +23,14 @@ class Organization(Base):
 class Membership(Base):
 
     id = Column(Integer, primary_key=True)
-    organization_id = Column(Integer, ForeignKey('organizations.id'))
-    user_id = Column(Integer, ForeignKey('users.id'))
+    organization_id = Column(
+        Integer,
+        ForeignKey('organizations.id', ondelete='CASCADE')
+    )
+    user_id = Column(
+        Integer,
+        ForeignKey('users.id', ondelete='CASCADE')
+    )
 
     __tablename__ = 'memberships'
 
