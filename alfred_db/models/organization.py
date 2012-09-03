@@ -35,6 +35,6 @@ class Membership(Base):
     __tablename__ = 'memberships'
 
     def __repr__(self):
-        return '<Membership(<User({!r})>-<Organization({!r})>)'.format(
+        return '<Membership({!r}-{!r})>'.format(
             self.organization_id, self.user_id
         )
