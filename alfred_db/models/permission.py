@@ -45,7 +45,6 @@ class Permission(Base):
     __tablename__ = 'permissions'
 
     def __repr__(self):
-        return '<Permission(<User({!r})>-<Repository({!r})>)>'.format(
-            self.user_id,
-            self.repository_id,
+        return '<Permission({!r}-{!r})>'.format(
+            self.user_id, self.repository_id
         )
