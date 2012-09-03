@@ -7,35 +7,15 @@ from .base import Base
 class Permission(Base):
 
     id = Column(Integer, primary_key=True)
-
     user_id = Column(
         Integer,
         ForeignKey('users.id', ondelete='CASCADE'),
         nullable=False,
     )
-    user = relationship(
-        'User',
-        backref=backref(
-            name='permissions',
-            lazy='dynamic',
-            cascade='all, delete-orphan',
-            passive_deletes=True,
-        ),
-    )
-
     repository_id = Column(
         Integer,
         ForeignKey('repositories.id', ondelete='CASCADE'),
         nullable=False,
-    )
-    repository = relationship(
-        'Repository',
-        backref=backref(
-            name='permissions',
-            lazy='dynamic',
-            cascade='all, delete-orphan',
-            passive_deletes=True,
-        ),
     )
 
     admin = Column(Boolean, default=False, nullable=False)
