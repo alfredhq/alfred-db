@@ -28,7 +28,7 @@ def upgrade():
         'repositories',
         sa.Column('owner_id', sa.Integer(), nullable=False)
     )
-    op.drop_column('repositories', u'user')
+    op.drop_column('repositories', 'user')
     op.create_unique_constraint(
         "uq_owner_type_owner_name",
         "repositories",
@@ -39,7 +39,7 @@ def upgrade():
 def downgrade():
     op.add_column(
         'repositories',
-        sa.Column(u'user', sa.String(), nullable=False)
+        sa.Column('user', sa.String(), nullable=False)
     )
     op.drop_constraint('uq_owner_type_owner_name', 'repositories', 'unique')
     op.drop_column('repositories', 'owner_id')
