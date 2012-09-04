@@ -14,9 +14,6 @@ class Repository(Base):
     owner_id = Column(Integer, nullable=False)
 
     __tablename__ = 'repositories'
-    __table_args__ = (
-        UniqueConstraint(owner_id, owner_type),
-    )
 
     def __repr__(self):
         return '<Repository({!r}, {!r})>'.format(self.owner_name, self.name)
