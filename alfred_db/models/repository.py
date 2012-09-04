@@ -5,6 +5,7 @@ from .base import Base
 class Repository(Base):
 
     id = Column(Integer, primary_key=True)
+    github_id = Column(Integer, nullable=False, unique=True)
     url = Column(String, nullable=False)
     name = Column(String, nullable=False)
     owner_name = Column(String, nullable=False)
