@@ -12,7 +12,7 @@ class Fix(Base):
     path = Column(String, nullable=False)
     line = Column(Integer, nullable=False)
     source = Column(Text, nullable=False)
-    solution = Column(Text)
+    solution = Column(Text, nullable=False)
 
     report_id = Column(
         Integer,
