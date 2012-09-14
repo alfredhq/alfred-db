@@ -10,6 +10,7 @@ class User(Base):
     login = Column(String, nullable=False, unique=True)
     name = Column(String, nullable=False)
     email = Column(String, nullable=False)
+    apitoken = Column(String, unique=True, nullable=False)
 
     __tablename__ = 'users'
 
