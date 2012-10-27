@@ -8,6 +8,7 @@ class Repository(Base):
     github_id = Column(Integer, nullable=False, unique=True)
     url = Column(String, nullable=False)
     name = Column(String, nullable=False)
+    token = Column(String, nullable=False)
     owner_name = Column(String, nullable=False)
     owner_type = Column(Enum('organization', 'user', native_enum=False),
                         nullable=False)
