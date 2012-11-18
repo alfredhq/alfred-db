@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, Text, DateTime, ForeignKey
 from sqlalchemy.orm import relationship, backref
 
+from ..helpers import now
 from .base import Base
 
 
@@ -8,6 +9,7 @@ class Report(Base):
 
     id = Column(Integer, primary_key=True)
     error = Column(Text)
+    created_on = Column(DateTime(timezone=True), nullable=False,  default=now)
     finished_on = Column(DateTime(timezone=True))
 
     commit_id = Column(
