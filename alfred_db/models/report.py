@@ -8,7 +8,7 @@ class Report(Base):
 
     id = Column(Integer, primary_key=True)
     error = Column(Text)
-    finished_on = Column(DateTime)
+    finished_on = Column(DateTime(timezone=True))
 
     commit_id = Column(
         Integer,
