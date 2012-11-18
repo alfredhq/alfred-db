@@ -15,6 +15,7 @@ setup(
         'PyYAML',
         'SQLAlchemy',
         'alembic',
+        'pytz',
     ],
     entry_points={
         'console_scripts': [
