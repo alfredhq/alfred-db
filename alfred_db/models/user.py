@@ -1,4 +1,6 @@
-from sqlalchemy import Column, Integer, String, UniqueConstraint
+from sqlalchemy import (
+    Boolean, Column, DateTime, Integer, String, UniqueConstraint
+)
 from .base import Base
 
 
@@ -11,6 +13,8 @@ class User(Base):
     name = Column(String, nullable=False)
     email = Column(String, nullable=False)
     apitoken = Column(String, unique=True, nullable=False)
+    is_syncing = Column(Boolean, default=False, nullable=False)
+    last_synced_at = Column(DateTime(timezone=True))
 
     __tablename__ = 'users'
 
