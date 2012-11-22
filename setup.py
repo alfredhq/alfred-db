@@ -15,6 +15,7 @@ setup(
         'PyYAML',
         'SQLAlchemy',
         'alembic',
+        'psycopg2',
         'pytz',
     ],
     entry_points={

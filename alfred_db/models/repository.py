@@ -10,8 +10,7 @@ class Repository(Base):
     name = Column(String, nullable=False)
     token = Column(String, nullable=False)
     owner_name = Column(String, nullable=False)
-    owner_type = Column(Enum('organization', 'user', native_enum=False),
-                        nullable=False)
+    owner_type = Column(Enum('organization', 'user'), nullable=False)
     owner_id = Column(Integer, nullable=False)
 
     __tablename__ = 'repositories'
