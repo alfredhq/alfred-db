@@ -46,7 +46,7 @@ def upgrade():
         sa.Column('name', sa.String, nullable=False),
         sa.Column('token', sa.String, nullable=False),
         sa.Column('hook_id', sa.String, nullable=True),
-        sa.Column('owner_name', sa.String),
+        sa.Column('owner_name', sa.String, nullable=False),
         sa.Column('owner_type',
             sa.Enum('organization', 'user', name='repositories_owner_type'),
             nullable=False,
