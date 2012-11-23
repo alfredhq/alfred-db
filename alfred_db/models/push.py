@@ -7,12 +7,12 @@ from .base import Base
 class Push(Base):
 
     id = Column(Integer, primary_key=True)
-    hash = Column(String, nullable=False)
     ref = Column(String, nullable=False)
     compare_url = Column(String, nullable=False)
+    commit_hash = Column(String, nullable=False)
+    commit_message = Column(Text, nullable=False)
     committer_name = Column(String, nullable=False)
     committer_email = Column(String, nullable=False)
-    message = Column(Text, nullable=False)
 
     repository_id = Column(
         Integer,
@@ -32,4 +32,4 @@ class Push(Base):
     __tablename__ = 'pushes'
 
     def __repr__(self):
-        return '<Push({!r}, {!r})>'.format(self.ref, self.hash)
+        return '<Push({!r}, {!r})>'.format(self.ref, self.commit_hash)
