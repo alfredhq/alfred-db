@@ -12,13 +12,13 @@ class Report(Base):
     created_on = Column(DateTime(timezone=True), nullable=False,  default=now)
     finished_on = Column(DateTime(timezone=True))
 
-    commit_id = Column(
+    push_id = Column(
         Integer,
-        ForeignKey('commits.id', ondelete='CASCADE'),
+        ForeignKey('pushes.id', ondelete='CASCADE'),
         nullable=False,
     )
-    commit = relationship(
-        'Commit',
+    push = relationship(
+        'Push',
         backref=backref(
             name='report',
             uselist=False,

@@ -1,6 +1,6 @@
 from .base import Base
 
-from .commit import Commit
+from .push import Push
 from .fix import Fix
 from .organization import Organization
 from .permission import Permission

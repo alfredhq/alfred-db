@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship, backref
 from .base import Base
 
 
-class Commit(Base):
+class Push(Base):
 
     id = Column(Integer, primary_key=True)
     hash = Column(String, nullable=False)
@@ -22,14 +22,14 @@ class Commit(Base):
     repository = relationship(
         'Repository',
         backref=backref(
-            name='commits',
+            name='pushes',
             lazy='dynamic',
             cascade='all, delete-orphan',
             passive_deletes=True,
         ),
     )
 
-    __tablename__ = 'commits'
+    __tablename__ = 'pushes'
 
     def __repr__(self):
-        return '<Commit({!r}, {!r})>'.format(self.ref, self.hash)
+        return '<Push({!r}, {!r})>'.format(self.ref, self.hash)
