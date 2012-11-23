@@ -15,10 +15,7 @@ import sqlalchemy as sa
 
 
 def upgrade():
-    op.add_column(
-        'repositories',
-        sa.Column('hook_id', sa.String(), nullable=True)
-    )
+    op.add_column('repositories', sa.Column('hook_id', sa.String()))
 
 
 def downgrade():
