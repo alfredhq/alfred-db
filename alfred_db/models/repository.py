@@ -9,6 +9,7 @@ class Repository(Base):
     url = Column(String, nullable=False)
     name = Column(String, nullable=False)
     token = Column(String, nullable=False)
+    hook_id = Column(String, nullable=True)
     owner_name = Column(String, nullable=False)
     owner_type = Column(Enum('organization', 'user'), nullable=False)
     owner_id = Column(Integer, nullable=False)
