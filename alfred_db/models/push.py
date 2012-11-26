@@ -12,7 +12,7 @@ class Push(Base):
     commit_hash = Column(String, nullable=False)
     commit_message = Column(Text, nullable=False)
     committer_name = Column(String, nullable=False)
-    committer_email = Column(String, nullable=False)
+    committer_email = Column(String)
 
     repository_id = Column(
         Integer,

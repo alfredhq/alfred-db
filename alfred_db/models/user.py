@@ -11,7 +11,7 @@ class User(Base):
     github_access_token = Column(String, nullable=False)
     login = Column(String, nullable=False, unique=True)
     name = Column(String, nullable=False)
-    email = Column(String, nullable=False)
+    email = Column(String)
     apitoken = Column(String, unique=True, nullable=False)
     is_syncing = Column(Boolean, default=False, nullable=False)
     last_synced_at = Column(DateTime(timezone=True))
