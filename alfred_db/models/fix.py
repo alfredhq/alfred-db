@@ -14,13 +14,13 @@ class Fix(Base):
     source = Column(Text, nullable=False)
     solution = Column(Text, nullable=False)
 
-    report_id = Column(
+    push_id = Column(
         Integer,
-        ForeignKey('reports.id', ondelete='CASCADE'),
+        ForeignKey('pushes.id', ondelete='CASCADE'),
         nullable=False,
     )
-    report = relationship(
-        'Report',
+    push = relationship(
+        'Push',
         backref=backref(
             name='fixes',
             lazy='dynamic',

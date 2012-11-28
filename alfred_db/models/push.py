@@ -1,6 +1,7 @@
-from sqlalchemy import Column, Integer, String, Text, ForeignKey
+from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime
 from sqlalchemy.orm import relationship, backref
 
+from ..helpers import now
 from .base import Base
 
 
@@ -13,6 +14,10 @@ class Push(Base):
     commit_message = Column(Text, nullable=False)
     committer_name = Column(String, nullable=False)
     committer_email = Column(String)
+
+    error = Column(Text)
+    created_at = Column(DateTime(timezone=True), nullable=False, default=now)
+    finished_at = Column(DateTime(timezone=True))
 
     repository_id = Column(
         Integer,
