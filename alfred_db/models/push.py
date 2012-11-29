@@ -17,6 +17,7 @@ class Push(Base):
 
     error = Column(Text)
     created_at = Column(DateTime(timezone=True), nullable=False, default=now)
+    started_at = Column(DateTime(timezone=True))
     finished_at = Column(DateTime(timezone=True))
 
     repository_id = Column(
